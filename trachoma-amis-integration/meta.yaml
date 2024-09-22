@@ -1,0 +1,27 @@
+package:
+  name: ntd-trachoma-fitting
+  version: 0.0.1
+
+source:
+  git_url: https://github.com/NTD-Modelling-Consortium/trachoma-amis-integration.git
+
+build:
+  noarch: python
+  number: 0
+  script: python -m pip install . --no-deps
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python>=3.6
+    - amisforinfectiousdiseases
+    - ntd-trachoma
+    - joblib
+    - numpy <=1.26
+
+test:
+  imports:
+    - trachoma_amis
